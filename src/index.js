@@ -1,5 +1,6 @@
-import {showCurrentTime} from './helpers/date-helpers';
+import React, {Component} from 'react';
+window.React = React;
 
+import ReactDOM from 'react-dom';
 
-
-document.getElementById("button").onclick = showCurrentTime;
+ReactDOM.render(<div>title</div>, document.getElementById("root"));
