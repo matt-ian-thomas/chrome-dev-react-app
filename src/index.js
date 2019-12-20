@@ -3,4 +3,17 @@ window.React = React;
 
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<div>title</div>, document.getElementById("root"));
+class App extends Component {
+	constructor(props, context){
+		super(props, context);
+	}
+
+	render(){
+		return (
+			<div>text</div>
+		);
+	}
+
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
