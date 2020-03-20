@@ -8,10 +8,11 @@ export class Button extends Component {
 		let {
 			value,
 			label,
-			action
+			action,
+			classNames
 		} = this.props;
 		return (
-			<button type="button" value={value} onClick={action}>{label}</button>
+			<button className={classNames} type="button" value={value} onClick={action}>{label}</button>
 		);
 	}
 }

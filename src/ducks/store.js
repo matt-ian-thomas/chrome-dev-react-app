@@ -25,15 +25,15 @@ const crashReporter = store => next => action => {
 
 function reducer(state = {}, action) {
   switch (action.type) {
-    case 'UPDATE_TIME':
-      return Object.assign({}, state, { time: getCurrentTime() })
+    case 'TOGGLE_STYLES':
+      return Object.assign({}, state, { mode: state.mode === 'light' ? 'dark' : 'light' })
     default:
       return state
   }
 }
 
 export default createStore(reducer, {
-		time: getCurrentTime(),
+		mode: 'light',
 		showButton: true
 	},
 	applyMiddleware(logger, crashReporter)

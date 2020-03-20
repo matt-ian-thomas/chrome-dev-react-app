@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import classNames from 'classnames';
 
 import {Button} from './components/button';
 
@@ -7,32 +8,31 @@ class App extends Component {
 	constructor(props, context){
 		super(props, context);
 
-		this.showCurrentTime = this.showCurrentTime.bind(this);
+		this.toggleStyles = this.toggleStyles.bind(this);
 	}
 
-	showCurrentTime() {
+	toggleStyles() {
 		this.props.dispatch({
-			type: 'UPDATE_TIME'
+			type: 'TOGGLE_STYLES'
 		});
 	}
 	render(){
 		let {
 			showButton,
-			time
+			mode
 		} = this.props;
+
+		// app app2 app3
+
 		return (
 			<div>
-				<h1 id="time">{time}</h1>
-				{showButton
-					? <Button dollarAmount={1000} value="Test Button" label="What time is it?" action={this.showCurrentTime}/>
-					: undefined
-				}
+				<Button classNames={classNames('app', 'app2', {'app3': mode === 'light'})} value="Toggle Styles" label="Toggle Styles" action={this.toggleStyles}/>
 			</div>
 		);
 	}
 }
 
 export default connect(state => ({
-	showButton: state.showButton,
+	mode: state.mode,
 	time: state.time
 }))(App);
