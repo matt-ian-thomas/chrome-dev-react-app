@@ -1,11 +1,10 @@
-.app {
-	font-size: 50px;
+.appLight {
+	background-color: white;
+	color: black;
 }
 
-.app2 {
+.appDark {
 	background-color: black;
+	color: white;
 }
 
-.app3 {
-	text-align: center;
-}
