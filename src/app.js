@@ -22,11 +22,9 @@ class App extends Component {
 			mode
 		} = this.props;
 
-		// app app2 app3
-
 		return (
 			<div>
-				<Button classNames={classNames('app', 'app2', {'app3': mode === 'light'})} value="Toggle Styles" label="Toggle Styles" action={this.toggleStyles}/>
+				<Button classNames={classNames( mode == 'light' ? 'appLight' : 'appDark')} value="Toggle Styles" label="Toggle Styles" action={this.toggleStyles}/>
 			</div>
 		);
 	}
